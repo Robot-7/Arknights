@@ -1,0 +1,140 @@
+*{
+  margin:0;
+  padding: 0;
+}
+
+html,body{
+  width: 100%;
+  height: 100%;
+}
+
+
+
+.common-links{
+  text-decoration: none;
+  font-size: 14px;
+  color: #25B1DD;
+}
+
+
+.container{
+  height: 100%;
+/*  min-height: 800px;
+  min-width: 968px;*/
+  position: relative;
+  background: url("https://ak.hypergryph.com/user/public/images/background.jpg") no-repeat;
+  background-size: cover;
+  display: flex;
+}
+
+.container-inner{
+  width: 562px;
+  margin: auto;
+}
+
+.container-inner-logo{
+  width: 50%;
+  margin-left: 25%;
+  margin-bottom:5%;
+}
+.container-inner-logo img{
+  width: 100%;
+}
+.container-inner-login{
+  width: 100%;
+  height: 70%;
+  border: 1px solid white;
+}
+
+.container-inner-login>div{
+  width: 70%;
+  margin-left: 15%;
+  margin-top: 2%;
+  min-height: 20px;
+}
+
+.container-inner-login>div:first-child{
+  margin-top: 12%;
+}
+
+.login-input{
+  height: 40px;
+  width: 100%;
+  font-size: 22px;
+  text-indent: 3%;
+  background: #E8F0FE;
+}
+
+
+.container-inner-links>div:first-child{
+  float: left;
+}
+
+.container-inner-links>div:last-child{
+  float: right;
+}
+
+.container-inner-submit{
+  position: relative;
+}
+
+.input-button{
+  width: 100%;
+  background: none;
+  color: white;
+  cursor: pointer;
+  outline: none;
+  border: 1px solid white;
+  height: 60px;
+  margin-bottom: 40px;
+  font-size: 22px;
+  text-align: center;
+}
+
+.input-button-mask{
+  position: absolute;
+  width: 100%;
+  height:  60px;
+  top:0;
+  left:0;
+  background: white;
+  pointer-events: none;
+  opacity: .2;
+}
+
+.container-inner-submit:hover .input-button-mask{
+  opacity: .5;
+}
+
+.container-inner-explain{
+  display: block;
+  width: 100%;
+  margin-top: 10px;
+  font-size: 15px;
+  text-align: center;
+  color: white;
+}
+.container-inner-explain>a{
+  font-size: 15px;
+}
+
+
+@media screen and (max-width:700px) {
+  .container-inner{
+    width: 350px;
+    margin: auto;
+  }
+  .login-input{
+    height: 20px;
+    font-size: 15px;
+  }
+  .input-button{
+    height: 30px;
+    font-size: 15px;
+  }
+  .input-button-mask{
+    height:  30px;
+  }
+}
+
+
