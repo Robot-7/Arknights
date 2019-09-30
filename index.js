@@ -5,17 +5,7 @@ $(function () {
   /*加载控件事件*/
   initEvents();
 
-  /*背景视频对象*/
-  let videoBg = new Player(".section-video-bg");
 
-  /*去除背景pv封面*/
-  videoBg.videoCover($(".section-video-bg-cover"));
-
-  setTimeout(function(){
-    /*强制去除封面*/
-    $(".section-video-bg-cover").css("opacity","0");
-    videoBg=null;
-  },3000);
 
   //火狐浏览器
   document.addEventListener('DOMMouseScroll', scrollBarMouseWheel());
@@ -30,6 +20,17 @@ $(function () {
 
 /*事件加载*/
 function initEvents() {
+
+  /*背景视频对象*/
+  let videoBg = new Player(".section-video-bg");
+
+  /*去除背景pv封面*/
+  videoBg.videoCover($(".section-video-bg-cover"));
+
+  setTimeout(function(){
+   $(".section-video-bg-cover").css("opacity","0");
+    console.log("强制去除封面");
+  },3000);
 
 
   /*播放视频对象*/
