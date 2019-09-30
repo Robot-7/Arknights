@@ -11,11 +11,11 @@ $(function () {
   /*去除背景pv封面*/
   videoBg.videoCover($(".section-video-bg-cover"));
 
-  /*去除背景pv封面*/
   setTimeout(function(){
-    videoBg.videoCover($(".section-video-bg-cover"));
+    /*强制去除封面*/
+    $(".section-video-bg-cover").css("opacity","0");
     videoBg=null;
-  },10000);
+  },3000);
 
   //火狐浏览器
   document.addEventListener('DOMMouseScroll', scrollBarMouseWheel());
