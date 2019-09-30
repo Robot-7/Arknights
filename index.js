@@ -5,6 +5,10 @@ $(function () {
   /*加载控件事件*/
   initEvents();
 
+  /*背景视频对象*/
+  let videoBg = new Player(".section-video-bg");
+  /*去除背景pv封面*/
+  videoBg.videoCover($(".section-video-bg-cover"));
 
   //火狐浏览器
   document.addEventListener('DOMMouseScroll', scrollBarMouseWheel());
@@ -20,8 +24,6 @@ $(function () {
 /*事件加载*/
 function initEvents() {
 
-  /*背景视频对象*/
-  let videoBg = new Player(".section-video-bg");
 
   /*播放视频对象*/
   let videoPlayer = new Player(".video-window-show");
@@ -82,8 +84,7 @@ function initEvents() {
   /*鼠标下滑动画效果*/
   animationMouseScroll()();
 
-  /*添加背景pv封面*/
-  videoBg.videoCover($(".section-video-bg-cover"));
+
 
   /*播放pv*/
   $(".section-video-play").click(function () {
