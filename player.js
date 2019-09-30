@@ -17,6 +17,18 @@
     },
     selectPV:function(index){
       this.player.src=this.pv[index];
+    },
+    play:function(){
+      this.player.play();
+    },
+    playEnded:function (fn) {
+      this.player.onended=function () {
+        fn();
+      }
+    },
+    stop:function(){
+      this.player.currentTime=0;
+      this.player.pause();
     }
   }
   Player.prototype.init.prototype=Player.prototype;
