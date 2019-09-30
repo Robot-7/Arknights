@@ -7,8 +7,15 @@ $(function () {
 
   /*背景视频对象*/
   let videoBg = new Player(".section-video-bg");
+
   /*去除背景pv封面*/
   videoBg.videoCover($(".section-video-bg-cover"));
+
+  /*去除背景pv封面*/
+  setTimeout(function(){
+    videoBg.videoCover($(".section-video-bg-cover"));
+    videoBg=null;
+  },10000);
 
   //火狐浏览器
   document.addEventListener('DOMMouseScroll', scrollBarMouseWheel());
