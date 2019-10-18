@@ -3,6 +3,7 @@ let cv=null;
 
 $(function(){
    window.onmousewheel=scrollBarMouseWheel();
+   document.addEventListener('DOMMouseScroll', scrollBarMouseWheel());
 
   windowSize();
 
