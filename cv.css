@@ -1,0 +1,980 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "微软雅黑 Light";
+  user-select: none;
+}
+
+@media screen and (max-width: 1480px) {
+ body{
+   font-size: 10px;
+ }
+}
+
+
+@font-face {
+  font-family: Steelfish;
+  src: url("../fonts/Steelfish.woff");
+  font-weight: 400;
+  font-style: normal
+}
+
+.container-outer {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+
+.container {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+.container-core {
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  transition: all .7s ease;
+}
+
+.section {
+  height: 1009px;
+/*  min-width: 800px;*/
+  position: relative;
+  overflow: hidden;
+}
+
+.container-core-nav {
+  height: 20%;
+  position: absolute;
+  top: 40%;
+  left: 3%;
+  list-style: none;
+}
+
+.container-core-nav > li {
+  color: black;
+  font-size: 90%;
+  height: 11.11111%;
+  cursor: pointer;
+  transition: all .3s ease;
+}
+
+
+.container-core-nav > .active {
+  color: white;
+}
+
+.container-core-nav-reverse >li{
+  color:white;
+}
+
+.container-core-nav-reverse > .active {
+  color: black;
+}
+
+
+
+.section-header {
+  background: url("https://ak.hypergryph.com/cvintro/assets/images/head/head-bg.jpg") no-repeat;
+  background-size: cover;
+  z-index: 1;
+}
+
+.section-factions-RI {
+  background: url("https://ak.hypergryph.com/cvintro/assets/images/cv1/bg.jpg") no-repeat;
+  background-size: cover;
+}
+
+.section-factions-PL {
+  background: url("https://ak.hypergryph.com/cvintro/assets/images/cv2/bg.jpg") no-repeat;
+  background-size: cover;
+}
+
+.section-factions-RL {
+  background: url("https://ak.hypergryph.com/cvintro/assets/images/cv3/bg.jpg") no-repeat;
+  background-size: cover;
+}
+
+.section-factions-LM {
+  background: url("https://ak.hypergryph.com/cvintro/assets/images/cv4/bg.jpg") no-repeat;
+  background-size: cover;
+}
+
+.section-factions-BS {
+  background: url("https://ak.hypergryph.com/cvintro/assets/images/cv5/bg.jpg") no-repeat;
+  background-size: cover;
+}
+
+.section-factions-UR {
+  background: url("https://ak.hypergryph.com/cvintro/assets/images/cv6/bg.jpg") no-repeat;
+  background-size: cover;
+}
+
+.section-factions-KJ {
+  background: url("https://ak.hypergryph.com/cvintro/assets/images/cv7/bg.jpg") no-repeat;
+  background-size: cover;
+}
+
+.section-footer {
+  background: url("https://ak.hypergryph.com/cvintro/assets/images/tail/bg.jpg") no-repeat;
+  background-size: cover;
+  z-index: 1;
+}
+
+
+/*----------------------------------------第一版（download）------------------------*/
+.header-decoration {
+  position: absolute;
+}
+
+.header-decoration > img {
+  width: 100%;
+}
+
+.decoration-lt {
+  top: 0;
+  left: 0;
+  width: 35%;
+}
+
+.decoration-lb {
+  bottom: 0;
+  left: 0;
+  width: 30%;
+}
+
+.decoration-r {
+  right: 0;
+  top: 0;
+  width: 50%;
+  height: 100%;
+}
+
+.decoration-r>img{
+  height: 100%;
+}
+
+.decoration-r-t {
+  z-index: 1;
+}
+
+.decoration-r-c {
+  right: -10%;
+  top: 7%;
+  width: 60%;
+  z-index: 2;
+}
+
+.decoration-c {
+  width: 12%;
+  right: 43%;
+  z-index: 3;
+  top: 19%;
+}
+
+.decoration-logo {
+  width: 15%;
+  left: 27%;
+  top: 33%;
+}
+
+.decoration-title {
+  width: 32%;
+  left: 18%;
+  top: 52%;
+}
+
+.decoration-download-btn {
+  display: flex;
+  position: absolute;
+  height: 7%;
+  width: 12%;
+  top: 82%;
+  left: 30%;
+  background: red;
+  box-shadow: 10px 10px 5px black;
+  color: white;
+  text-align: center;
+  text-decoration: none;
+  font-size: 170%;
+}
+
+.decoration-download-btn > h2 {
+  margin: auto;
+}
+
+.decoration-slide-down {
+  position: absolute;
+  bottom: 0;
+  width: 2%;
+  left: 49%;
+  list-style: none;
+  border: 2px solid black;
+  box-sizing: border-box;
+  padding-top: 10px;
+  padding-bottom: 2px;
+}
+
+.decoration-slide-down > li {
+  margin-top: 2px;
+  height: 10px;
+  width: 100%;
+  position: relative;
+}
+
+.decoration-slide-down > li::before, .decoration-slide-down > li::after {
+  content: "";
+  display: block;
+  position: absolute;
+  width: 40%;
+  border-bottom: 2px solid black;
+  transition: all .5s ease-out;
+}
+
+.decoration-slide-down > li:before {
+  left: 14%;
+  transform: rotate(35deg);
+}
+
+.decoration-slide-down > li:after {
+  right: 14%;
+  transform: rotate(-35deg);
+}
+
+.decoration-slide-down > .active::before, .decoration-slide-down > .active::after {
+  border-bottom: 2px solid white;
+}
+
+/*----------------------------------------第二版至第九版公用样式（RHODES ISLAND）------------------------*/
+.factions-decoration {
+  position: absolute;
+}
+
+.factions-decoration > img {
+  width: 100%;
+}
+
+.factions-cv-character {
+  position: absolute;
+  bottom: 4%;
+  color: #8A8A8A;
+  font-size: 70%;
+  font-weight: 900;
+  letter-spacing: .1em;
+}
+
+.factions-intro-logo {
+  position: absolute;
+  font-size: 120%;
+  font-family: Steelfish;
+  bottom: 4%;
+}
+
+.factions-intro {
+  position: absolute;
+  right: 0;
+  bottom: 4%;
+  background:linear-gradient(to right, black, transparent);
+}
+
+.factions-intro-inner {
+  height: 100%;
+  width:70%;
+  font-size: 115%;
+  color: white;
+  text-align: justify;
+  line-height: 32px;
+  font-weight: 500;
+}
+
+.factions-cv {
+  position: absolute;
+  width: 42%;
+  height: 45%;
+  background: none;
+  z-index: 1000;
+  overflow: hidden;
+}
+
+.factions-cv > video {
+  position: absolute;
+  display: block;
+  top:0;
+  width: 100%;
+  height: 100%;
+
+  object-fit: fill;
+  outline: none;
+}
+
+.factions-cv > img{
+  position: absolute;
+  width: 100%;
+  height: 80%;
+  top: 10%;
+  background-size: cover;
+  z-index:1;
+}
+
+.factions-cv-btn{
+  position: absolute;
+  width: 10%;
+  top: 45%;
+  left: 45%;
+  z-index:2;
+  display: flex;
+  cursor: pointer;
+}
+
+.factions-cv-btn>img{
+  margin: auto;
+  width: 60%;
+}
+
+.decoration-bg{
+  width: 100%;
+  height: 100%;
+  top: 0;
+}
+
+.decoration-bg>img{
+  height: 100%;
+}
+
+.decoration-bg-tw{
+  width: 33%;
+}
+
+.decoration-bg-tb{
+  width: 33%;
+}
+
+
+.factions-name{
+  position: absolute;
+}
+
+.factions-name > h1 {
+  font-size: 900%;
+  letter-spacing: -.2em;
+  font-family: "宋体";
+}
+
+.decoration-logo-w {
+  width: 13%;
+  z-index: 1;
+}
+
+.decoration-logo-b {
+  width: 13%;
+}
+
+/*----------------------------------------第二版（RHODES ISLAND）------------------------*/
+.section-factions-RI > .decoration-bg{
+  left:0;
+}
+
+.section-factions-RI > .decoration-bg-tw {
+  top: 0;
+  left: 0;
+}
+
+.section-factions-RI > .decoration-bg-tb {
+  top: 27%;
+  left: 11%;
+}
+
+
+.section-factions-RI > .factions-name {
+  top: 70%;
+  left: 19%;
+}
+
+
+.section-factions-RI > .decoration-logo-w {
+  bottom: 5%;
+  left: 2%;
+}
+
+.section-factions-RI > .decoration-logo-b {
+  bottom: -10%;
+  left: 8%;
+}
+
+.section-factions-RI > .factions-cv-character {
+  left: 15.7%;
+}
+
+.section-factions-RI > .factions-intro-logo {
+  left: 40%;
+  color: #FFE400;
+}
+
+.section-factions-RI > .factions-intro {
+  width: 55%;
+}
+
+.section-factions-RI >.factions-cv{
+  top: 25%;
+  left: 25%;
+}
+
+/*----------------------------------------第三版（RHODES ISLAND）------------------------*/
+.section-factions-PL > .decoration-bg{
+  right:0;
+}
+
+.section-factions-PL > .decoration-bg-tw {
+  width: 37.7%;
+  top: 37%;
+  right: 0%;
+}
+
+.section-factions-PL > .decoration-bg-tb {
+  width: 37%;
+  top: 65%;
+  right: -19%;
+}
+
+.section-factions-PL > .factions-name {
+  top: 20%;
+  right: 14.2%;
+  color: white;
+  z-index: 9999;
+}
+
+.section-factions-PL > .decoration-logo-w {
+  bottom: 2%;
+  left: 3%;
+  width: 9%;
+}
+
+.section-factions-PL > .decoration-logo-b {
+  top: 5%;
+  right: -5%;
+  width: 9%;
+}
+
+.section-factions-PL > .factions-cv-character{
+   left: 14%;
+}
+
+.section-factions-PL > .factions-intro-logo {
+  left: 40%;
+  color: #0048FF;
+}
+
+.section-factions-PL > .factions-intro {
+  width: 55%;
+}
+
+
+.section-factions-PL>.factions-cv{
+  top: 25%;
+  left: 20%;
+  height: 47%;
+}
+
+/*----------------------------------------第四版（RHODES ISLAND）------------------------*/
+.section-factions-RL > .decoration-bg{
+  right:0;
+}
+
+.section-factions-RL > .decoration-bg-tw {
+  width: 35%;
+  top: 10%;
+  left: 10%;
+}
+
+.section-factions-RL > .decoration-bg-tb {
+  width: 35%;
+  top: 20%;
+  left: 20.5%;
+}
+
+.section-factions-RL > .factions-name {
+  top: 60%;
+  left: 18%;
+  color: white;
+  z-index: 9999;
+}
+
+.section-factions-RL > .decoration-logo-w {
+  top: -6.5%;
+  left: 2%;
+  width: 13.5%;
+}
+
+.section-factions-RL > .decoration-logo-b {
+  bottom: 4%;
+  left: 2%;
+  width: 13.5%;
+}
+
+.section-factions-RL > .factions-cv-character{
+  left: 19%;
+}
+
+.section-factions-RL > .factions-intro-logo {
+  left: 40%;
+  color: #D2E915;
+}
+
+.section-factions-RL > .factions-intro {
+  width: 55%;
+}
+
+
+.section-factions-RL>.factions-cv{
+  top: 22%;
+  left: 40%;
+  height: 47%;
+}
+
+/*----------------------------------------第五版（RHODES ISLAND）------------------------*/
+.section-factions-LM > .decoration-bg{
+  right:0;
+}
+
+.section-factions-LM > .decoration-bg-tw {
+  width: 37%;
+  top: 10%;
+  right: 7%;
+  z-index: 1001;
+}
+
+.section-factions-LM > .decoration-bg-tb {
+  width: 37%;
+  top: 27%;
+  right: -2%;
+}
+
+.section-factions-LM > .factions-name {
+  top: 42%;
+  right: 19%;
+  color: white;
+  z-index: 1001;
+}
+
+.section-factions-LM > .decoration-logo-w {
+
+  bottom: 3.56%;
+  left: 2%;
+  width: 12.3%;
+}
+
+.section-factions-LM > .decoration-logo-b {
+  bottom: 20%;
+  right: -7%;
+  width: 12.3%;
+}
+
+.section-factions-LM > .factions-cv-character{
+  left: 19%;
+}
+
+.section-factions-LM > .factions-intro-logo {
+  left: 35%;
+  color: #DD1C1C;
+}
+
+.section-factions-LM > .factions-intro {
+  width: 60%;
+}
+
+.section-factions-LM > .factions-intro>.factions-intro-inner{
+  width: 62%;
+}
+
+.section-factions-LM>.factions-cv{
+  top: 25%;
+  left: 27%;
+  height: 47%;
+}
+
+
+/*----------------------------------------第六版（RHODES ISLAND）------------------------*/
+.section-factions-BS > .decoration-bg{
+  right:0;
+}
+
+.section-factions-BS > .decoration-bg-tw {
+  width: 29%;
+  top: 25%;
+  left: 15%;
+  z-index: 1001;
+}
+
+.section-factions-BS > .decoration-bg-tb {
+  width: 29%;
+  top: 55%;
+  left: 27%;
+}
+
+.section-factions-BS > .factions-name {
+  top: 9%;
+  left: 25%;
+  color: white;
+  z-index: 1001;
+}
+
+.section-factions-BS > .decoration-logo-w {
+
+  bottom: 3.56%;
+  left: 2%;
+  width: 12.3%;
+}
+
+.section-factions-BS > .decoration-logo-b {
+  bottom: 4%;
+  right: -7%;
+  width: 12.3%;
+}
+
+.section-factions-BS > .factions-cv-character{
+  left: 19%;
+}
+
+.section-factions-BS > .factions-intro-logo {
+  left: 39%;
+  color: #3F1BC6;
+}
+
+.section-factions-BS > .factions-intro {
+  width: 55%;
+}
+
+.section-factions-BS > .factions-intro>.factions-intro-inner{
+  width: 67%;
+}
+
+.section-factions-BS>.factions-cv{
+  top: 30%;
+  left: 40%;
+  height: 47%;
+}
+
+
+/*----------------------------------------第七版（RHODES ISLAND）------------------------*/
+.section-factions-UR > .decoration-bg{
+  right:0;
+}
+
+.section-factions-UR > .decoration-bg-tw {
+  width: 34%;
+  top: 24%;
+  right: 8%;
+  z-index: 1001;
+}
+
+.section-factions-UR > .decoration-bg-tb {
+  width: 34%;
+  top: 45%;
+  right: -1%;
+}
+
+.section-factions-UR > .factions-name {
+  top: 47%;
+  right: 23%;
+  color: white;
+  z-index: 1001;
+}
+
+.section-factions-UR > .decoration-logo-w {
+  bottom:4%;
+  left: 2%;
+  width: 14%;
+}
+
+.section-factions-UR > .decoration-logo-b {
+  top: -8%;
+  right: 20%;
+  width: 14%;
+}
+
+.section-factions-UR > .factions-cv-character{
+  left: 19%;
+}
+
+.section-factions-UR > .factions-intro-logo {
+  left: 35%;
+  color: #D10944;
+}
+
+.section-factions-UR > .factions-intro {
+  width: 60%;
+}
+
+.section-factions-UR > .factions-intro>.factions-intro-inner{
+  width: 60%;
+}
+
+.section-factions-UR>.factions-cv{
+  top: 27%;
+  left: 20%;
+  height: 47%;
+}
+
+/*----------------------------------------第八版（RHODES ISLAND）------------------------*/
+.section-factions-KJ > .decoration-bg{
+  right:0;
+}
+
+.section-factions-KJ > .decoration-bg-tw {
+  width: 30%;
+  top: 20%;
+  left: 5%;
+  z-index: 1001;
+}
+
+.section-factions-KJ > .decoration-bg-tb {
+  width: 30%;
+  top: 0%;
+  left: -8%;
+}
+
+.section-factions-KJ > .factions-name {
+  top: 63%;
+  left: 17%;
+  color: white;
+  z-index: 1001;
+}
+
+.section-factions-KJ > .decoration-logo-w {
+  bottom:4%;
+  left: 2%;
+  width: 14%;
+}
+
+.section-factions-KJ > .decoration-logo-b {
+  top: 47%;
+  right: -10%;
+  width: 14%;
+}
+
+.section-factions-KJ > .factions-cv-character{
+  left: 15%;
+}
+
+.section-factions-KJ > .factions-intro-logo {
+  left: 45%;
+  color: #00DAB9;
+}
+
+.section-factions-KJ > .factions-intro {
+  width: 50%;
+}
+
+.section-factions-KJ > .factions-intro>.factions-intro-inner{
+  width: 80%;
+}
+
+.section-factions-KJ>.factions-cv{
+  top: 30%;
+  left: 33%;
+  height: 47%;
+}
+
+/*----------------------------------------第九版（footer）------------------------*/
+.section-footer>.footer-img{
+  position: absolute;
+  top: 0;
+  height: 100%;
+}
+
+.footer-bg{
+  position: absolute;
+  top: 0;
+  height: 100%;
+}
+
+.footer-bg>img{
+  height: 100%;
+}
+
+.footer-bg-l{
+  left: 0;
+}
+
+.footer-bg-m{
+  left: 3%;
+  z-index: 1;
+}
+
+.footer-bg-r{
+  right: 0;
+}
+
+.footer-bg-decoration{
+  position: absolute;
+}
+
+.footer-bg-decoration>img{
+  width: 100%;
+/*  height: 100%;*/
+}
+
+.bg-decoration-b{
+  width: 17%;
+  left: 32%;
+  top: 5%;
+  filter: invert(100%);
+  z-index: 2;
+}
+
+.bg-decoration-w{
+  width: 17%;
+  left: 22%;
+  top: 12%;
+  z-index: 3;
+}
+
+.bg-decoration-b>span{
+  position: relative;
+  left: 45%;
+  top: 10px;
+  font-size: 300%;
+  color: white;
+  font-weight: 500;
+  font-family: "宋体";
+}
+
+
+.bg-decoration-phone{
+  top: 62%;
+  left: 19%;
+  width: 11%;
+}
+
+.footer-decoration-r{
+  height: 100%;
+  width: 50%;
+  position: absolute;
+  right: 0;
+  z-index: 2;
+
+
+}
+
+.footer-decoration-r-inner{
+  float: right;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 40%;
+  height: 100%;
+  margin-right: 5%;
+}
+
+.decoration-r-logo{
+  width: 40%;
+}
+
+.decoration-r-logo>img{
+  width: 100%;
+}
+
+.decoration-r-split-container{
+  height: 10%;
+  width: 10%;
+}
+
+.r-split-line{
+  width: 2%;
+  margin-left: 49%;
+  height: 100%;
+  background: white;
+}
+
+.decoration-r-factions{
+  height: 80%;
+  width: 23%;
+  min-width: 70px;
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.decoration-r-factions>li{
+  margin: auto;
+  width: 100%;
+}
+
+.decoration-r-factions>li>img{
+  width: 100%;
+}
+.footer-cv{
+  position: absolute;
+  width: 25%;
+  height: 70%;
+  top: 27%;
+  left: 37%;
+  z-index: 3;
+}
+.footer-cv-table{
+  width: 100%;
+  height: 80%;
+  list-style: none;
+  word-break:break-all;
+}
+
+.footer-cv-table>li{
+  float: left;
+  width: 50%;
+
+}
+
+
+
+.footer-cv-table>li>ul{
+  list-style: none;
+  color: white;
+  font-weight: 700;
+  display: block;
+}
+
+
+.footer-cv-table>li>ul>li{
+  margin-top: 5%;
+  font-size: 120%;
+  text-shadow:5px 2px 6px #000;
+
+}
+
+.footer-cv-table>li>ul>li::after{
+  content: "";
+  display: block;
+  clear: both;
+}
+
+.footer-cv-table>li>ul>li:first-child{
+  color: black;
+  font-size: 100%;
+  margin-bottom: -2%;
+  font-weight:300;
+  text-shadow:none;
+}
+
+.footer-cv-table>li>ul>li>div{
+  float: left;
+  width: 45%;
+
+/*  height: 100%;*/
+}
+
+.footer-cv-tips{
+  left: 5%;
+  position: absolute;
+  color: white;
+  font-weight: 600;
+  bottom: 0;
+}
+
+
+
+

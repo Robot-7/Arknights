@@ -738,14 +738,22 @@
 
 
 
-.news-slide-all li {
+.news-slide-all>li {
   list-style: none;
   float: left;
   background-size: cover !important;
   height: 100%;
   width: 14.28571%;
+  position: relative;
 }
-
+.news-slide-all>li>a{
+  display: block;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
 
 .news-slide-all li:nth-child(1) {
   background: url("https://ak.hypergryph.com/upload/images/20190327/1d06b6b2cb8eb411ea62a22cf915fe53.png") no-repeat;
